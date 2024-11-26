@@ -17,7 +17,7 @@ func TestNewStream(t *testing.T) {
 		{
 			name:     "empty_slice",
 			input:    []int{},
-			expected: []int{},
+			expected: nil,
 		},
 		{
 			name:     "single_element",
@@ -57,7 +57,7 @@ func TestStreamMap(t *testing.T) {
 			name:     "empty_stream",
 			input:    []int{},
 			f:        func(x int) int { return x * 2 },
-			expected: []int{},
+			expected: nil,
 		},
 		{
 			name:     "add_one",
@@ -94,7 +94,7 @@ func TestStreamFilter(t *testing.T) {
 			name:      "empty_stream",
 			input:     []int{},
 			predicate: func(x int) bool { return x > 0 },
-			expected:  []int{},
+			expected:  nil,
 		},
 		{
 			name:      "positive_numbers",
@@ -250,7 +250,7 @@ func TestStreamForEach(t *testing.T) {
 		{
 			name:     "empty_stream",
 			input:    []int{},
-			expected: []int{},
+			expected: nil,
 		},
 		{
 			name:     "single_element",
