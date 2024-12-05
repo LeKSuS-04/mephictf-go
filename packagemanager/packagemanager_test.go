@@ -113,7 +113,7 @@ func TestVersionConflict(t *testing.T) {
 	repo := Repository{
 		PackageDependencies: map[Package][]Package{
 			{Name: "A", Version: 1}: {{Name: "C", Version: 1}},
-			{Name: "B", Version: 1}: {{Name: "C", Version: 1}},
+			{Name: "B", Version: 1}: {{Name: "C", Version: 2}},
 			{Name: "C", Version: 1}: {},
 			{Name: "C", Version: 2}: {},
 		},
