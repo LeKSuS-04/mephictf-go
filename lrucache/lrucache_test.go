@@ -96,6 +96,6 @@ func TestCacheRangeWithStop(t *testing.T) {
 		values = append(values, v)
 		return k < 3
 	})
-	require.Equal(t, []int{0, 1, 2}, keys)
-	require.Equal(t, []int{0, 1, 2}, values)
+	require.Equal(t, []int{0, 1, 2, 3}, keys)
+	require.Equal(t, []int{0, 1, 2, 3}, values)
 }
