@@ -3,21 +3,21 @@ package main
 import "sync"
 
 type Semaphore struct {
-	// TODO: ...
+	c chan struct{}
 }
 
 func NewSemaphore(n int) *Semaphore {
 	return &Semaphore{
-		// TODO: ...
+		c: make(chan struct{}, n),
 	}
 }
 
 func (s *Semaphore) Acquire() {
-	// TODO: ...
+	s.c <- struct{}{}
 }
 
 func (s *Semaphore) Release() {
-	// TODO: ...
+	<-s.c
 }
 
 func work(s *Semaphore) {
@@ -28,7 +28,7 @@ func work(s *Semaphore) {
 }
 
 func main() {
-	s := NewSemaphore(1)
+	s := NewSemaphore(3)
 	wg := sync.WaitGroup{}
 	for i := 0; i < 10; i++ {
 		wg.Add(1)
